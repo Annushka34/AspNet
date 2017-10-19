@@ -1,4 +1,6 @@
 ﻿using DAL.Abstract;
+using DAL.Entities.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    public class EFContext : DbContext, IEFContext
+    public class EFContext : IdentityDbContext<AppUser>, IEFContext
     {
-        public EFContext() : base("TourConnection")
+        public EFContext() : base("TourConnectionAnn")
         {
             Database.SetInitializer<EFContext>(null);
         }
@@ -22,10 +24,10 @@ namespace DAL.Entities
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
 
-        #region User Security
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        #endregion
+        //#region User Security
+        //public DbSet<User> Users { get; set; }
+        //public DbSet<Role> Roles { get; set; }
+        //#endregion
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {

@@ -7,13 +7,13 @@ namespace DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CreatetableCountryandCity : IMigrationMetadata
+    public sealed partial class scratch : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreatetableCountryandCity));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(scratch));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710091613382_Create table Country and City"; }
+            get { return "201710191610004_scratch"; }
         }
         
         string IMigrationMetadata.Source
